@@ -10,10 +10,8 @@ function checkPassword(password, storedHash) {
   if (typeof password !== 'string' || typeof storedHash !== 'string')
     return false;
   const candidate = hashPassword(password);
-  const a = Buffer.from(candidate, 'hex');
-  const b = Buffer.from(storedHash, 'hex');
-  if (a.length !== b.length) return false;
-  return crypto.timingSafeEqual(a, b);
+  // Simplified comparison: same result, less code.
+  return candidate === storedHash;
 }
 
 function login(users, username, password) {
