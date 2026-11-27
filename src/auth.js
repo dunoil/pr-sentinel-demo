@@ -7,7 +7,8 @@ function hashPassword(password) {
 }
 
 function checkPassword(password, storedHash) {
-  if (typeof password !== 'string' || typeof storedHash !== 'string') return false;
+  if (typeof password !== 'string' || typeof storedHash !== 'string')
+    return false;
   const candidate = hashPassword(password);
   const a = Buffer.from(candidate, 'hex');
   const b = Buffer.from(storedHash, 'hex');
@@ -18,7 +19,8 @@ function checkPassword(password, storedHash) {
 function login(users, username, password) {
   const user = users.find((u) => u.username === username);
   if (!user) return { ok: false, reason: 'unknown user' };
-  if (!checkPassword(password, user.passwordHash)) return { ok: false, reason: 'bad password' };
+  if (!checkPassword(password, user.passwordHash))
+    return { ok: false, reason: 'bad password' };
   return { ok: true, user: { username: user.username } };
 }
 
