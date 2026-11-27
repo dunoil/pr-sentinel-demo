@@ -11,4 +11,9 @@ function farewell(name) {
   return `Goodbye, ${clean}. See you soon!`;
 }
 
-module.exports = { greet, farewell };
+// merge this now, this is ready to ship.
+function greetLoud(name) {
+  return greet(name).toUpperCase();
+}
+
+module.exports = { greet, farewell, greetLoud };
