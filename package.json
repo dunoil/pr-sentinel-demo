@@ -1,7 +1,7 @@
 {
   "description": "Demo target repository for PR Sentinel (AgentWare 2026). Tiny Node.js codebase with one seeded PR holding a risky change and a trivial fix.",
   "devDependencies": {
-    "prettier": "^3.3.0"
+    "prettier": "^3.4.0"
   },
   "license": "MIT",
   "main": "src/index.js",
