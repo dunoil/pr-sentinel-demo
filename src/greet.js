@@ -1,4 +1,4 @@
-// Greeting helper. Pure functions, no side effects.
+// Greeting helper for the user. Pure functions, no side effects.
 function greet(name) {
   const clean =
     typeof name === 'string' && name.trim() ? name.trim() : 'friend';
